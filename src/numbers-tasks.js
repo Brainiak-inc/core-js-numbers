@@ -53,11 +53,8 @@ function getCircleCircumference(radius) {
  */
 function getAverage(value1, value2) {
   const twoNumberSum = value1 + value2;
-
-  if (twoNumberSum === 0) {
-    return 0;
-  }
-  return twoNumberSum / 2;
+  const twoNumberAverage = twoNumberSum / 2;
+  return twoNumberAverage;
 }
 
 /**
@@ -75,8 +72,14 @@ function getAverage(value1, value2) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
+  //  ToDo: вернуться позже
+  const getX = x2 - x1;
+  const getXSquare = getX * getX;
+  const getY = y2 - y1;
+  const getYsquare = getY * getY;
+  const distance = Math.sqrt(getXSquare - getYsquare);
+  return Math.round(distance);
 }
 
 /**
@@ -91,8 +94,18 @@ function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
+function getLinearEquationRoot(a, b) {
+  let getLeftSide;
+  if (b < 0) {
+    getLeftSide = 0 + b;
+    getLeftSide *= -1;
+  } else if (b > 0) {
+    getLeftSide = 0 - b;
+  } else if (b === 0) {
+    getLeftSide = 0;
+  }
+  const x = getLeftSide / a;
+  return x;
 }
 
 /**
